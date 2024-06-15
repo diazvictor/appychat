@@ -1,0 +1,370 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    width: 97%;
+    height: 100vh;
+    background: linear-gradient(83.11deg, #7AFF69 20%, #BBFFB3 50%, #7AFFFF 100%);
+}
+
+
+.verificado-icon{
+    height: 40px;
+    width: 40px;
+}
+
+
+#container {
+    height: 670px;
+    width: 90%;
+    margin-top: 15px;
+    border-radius: 30px;
+    background: linear-gradient(30deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    z-index: 999;
+    backdrop-filter: blur(20px);
+}
+
+/* header */
+#header {
+    height: 150px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    gap: 25px;
+    padding: 15px;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 30px;
+    position: relative;
+    z-index: 0;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#header a {
+    height: 130px;
+    /* width: 90px; */
+    /* top: 0; */
+    /* left: 0; */
+    display: grid;
+    /* place-items: center; */
+    align-items: center;
+    text-decoration: none;
+    color: #33e669;
+    font-size: 20px;
+}
+
+/* profile */
+#header #profileImage {
+    height: 100px;
+    width: 100px;
+    padding: 15px;
+    /* min-height: 60px; */
+    /* position: relative; */
+    min-width: 60px;
+    place-content: center;
+    display: grid;
+    /* border: 2px solid #33e64b; */
+    /* border-radius: 50%; */
+    overflow: hidden;
+    left: 90px;
+}
+
+#header #profileImage img {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    z-index: -1;
+}
+
+/* details */
+#header #userDetail {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 45px;
+    gap: 15px;
+}
+
+#name {
+    text-align: left !important;
+}
+
+.full-name {
+    display: grid;
+    gap: 15px;
+    height: 80px;
+    /* right: 33px; */
+    position: relative;
+    width: 50%;
+    grid-template-columns: 10fr 1fr 1fr;
+    align-items: center;
+}
+
+
+/* name */
+#header #userDetail #name {
+    /* font-size: 22px; */
+    /* font-weight: 500; */
+    /* color: #3ce633; */
+}
+
+#mainSection {
+    height: 450px;
+    width: 100%;
+    position: absolute;
+    top: 220px;
+    left: 0;
+    overflow-y: auto;
+    padding: 30px;
+}
+#mainSection #errors{
+    font-size: 19px;
+    padding: 10px 35px;
+}
+
+#mainSection .request {
+    min-height: 80px;
+    max-width: 75%;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4));
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+#deleteButton {
+    
+    display: grid;
+    align-items: center;
+}
+
+.basura-icon {
+    height: 25px;
+    width: 25px;
+    margin-right: 15px;
+}
+
+span{
+    margin-right: 12px;
+    align-self: center;
+}
+
+#mainSection .request .name,
+#mainSection .response .name {
+    font-size: 20px;
+    color: #33e684;
+}
+
+#mainSection .request .name {
+    color: #5d006d;
+}
+
+#mainSection .request .messages {
+    font-size: 17px;
+}
+
+#mainSection .responseCard {
+    min-height: 80px;
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#mainSection .responseCard .response {
+    min-width: 80px;
+    max-width: 75%;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4));
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* messages input field */
+#messagingTypingSection {
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+}
+
+.emoji-picker-icon {
+    position: relative !important;
+    margin-left: 10px;
+    top: 0 !important;
+    right: 0 !important;
+}
+
+.emoji-wysiwyg-editor {
+    width: 83;
+    padding: 6px;
+    min-height: 50px !important;
+    max-height: 284px;
+    margin-left: 38px;
+    overflow: auto;
+    width: 78%;
+    line-height: 17px;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border: none;
+    outline: none;
+    box-shadow: 1px 1px 6px #00000013, -1px -1px 6px #e6336f13;
+    border-radius: 7px !important;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    position: absolute;
+    left: 70px;
+    word-wrap: break-word;
+}
+.disabledInput {
+    display: none;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin: 0px auto;
+    width: 95%;
+}
+
+#messagingTypingSection #typingField::placeholder {
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+}
+
+#messagingTypingSection #sendMessage {
+    height: 50px;
+    width: 90px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: linear-gradient(83.11deg, #00ff28 0%, #4fd1c5 100%);
+    margin: 0px 40px;
+    padding: 0px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    position: absolute;
+    right: 25px;
+    cursor: pointer;
+}
+
+/* customizing scroll bar */
+#mainSection::-webkit-scrollbar {
+    background: transparent;
+}
+
+#mainSection::-webkit-scrollbar-track {
+    width: 40px;
+}
+
+#mainSection::-webkit-scrollbar-thumb {
+    height: 40px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+}
+#messagingTypingSection .setId
+{
+    display: none;
+}
+
+@media only screen and (max-width: 800px) {
+    #messagingTypingSection .emoji-wysiwyg-editor{
+        width: 60%;
+        left: 65px;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    #messagingTypingSection .emoji-wysiwyg-editor{
+        width: 50%;
+        left: 35px;
+    }
+
+
+    .full-name {
+        width: auto;
+        /* padding: 2px; */
+    }
+
+    
+    #header {
+        display: grid;
+        gap: 0px;
+        height: 250px;
+        justify-content: center;
+    }
+}
+
+
+
+
+.imagen {
+    margin-top: 20px;
+    height: 250px;
+    width: 250px;
+}
+
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    height: 50px;
+    width: 20%;
+    margin: 0px auto;
+    button {
+        background: transparent;
+    border: none;
+    img {
+            height: 25px;
+    width: 25px;
+        }
+    }
+}
+
+/* Estilos para el botón personalizado */
+#custom-button {
+    background-color: transparent; /* Cambia el color de fondo según tus preferencias */
+    color: rgb(14, 14, 14);
+    border: none;
+    font-size: 20px;
+    margin-left: 20px;
+    opacity: 0.8;
+    cursor: pointer;
+
+    img {
+        width: 19.38px;
+        height: 21px;
+    }
+  }
+  
+  /* Estilos para el icono dentro del botón */
+  #custom-button i {
+    margin-right: 5px; /* Espacio entre el icono y el texto, puedes ajustarlo según tus preferencias */
+  }

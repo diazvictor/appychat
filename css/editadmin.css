@@ -1,0 +1,490 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: linear-gradient(83.11deg, #7AFF69 20%, #BBFFB3 50%, #7AFFFF 100%);
+}
+
+.verificado-icon{
+    height: 40px;    
+    width: 40px;
+}
+
+.report-buttons {
+    display: flex;
+    justify-self: end;
+    position: absolute;
+    gap: 10px;
+    right: 30px;
+}
+
+#container {
+    height: 870px;
+    width: 90%;
+    margin: 15px 0;
+    position: relative;
+    /* padding: 5px; */
+    border-radius: 30px;
+    background: linear-gradient(30deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    z-index: 999;
+    backdrop-filter: blur(20px);
+}
+
+/* header */
+#container #header {
+    height: 195px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    z-index: 1;
+    position: relative;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* profile image */
+#header #headerProfile {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 10px; /* Espacio dentro del contenedor */
+    height: 120px;
+    width: 120px;
+    border-radius: 0%;
+    overflow: hidden;
+    position: absolute;
+    left: 50px;
+}
+
+#header #headerProfile img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    position: relative;
+    z-index: -1;
+}
+
+#header #details {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr;
+    left: 190px;
+    width: 200px;
+}
+
+.full-name{
+    display: grid;
+    align-items: center;
+    gap: 12px;
+    grid-template-columns: 10fr 1fr 1fr;
+    width: 50%;
+    margin-bottom: 7px;
+}
+
+.chat-icon {
+    height: 30px;
+    width: 30px;
+}
+
+/* User Name */
+#header #details #headerName {
+    font-weight: 500;
+    margin: 0 0 3px 0;
+    color: #33e636;
+    text-shadow: 1px 1px 0px #00000070;
+    font-size: 20px;
+    font-family: Poppins;
+}
+
+#header #details #headerStatus {
+    font-weight: 300;
+    width: 500px;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.userProfile {
+    display: grid;
+    width: 100%;
+    /* align-content: center; */
+    /* place-items: center; */
+    position: relative;
+    height: 27;
+}
+
+.fullProfile {
+    display: grid;
+    height: 175px;
+    width: 100%;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    /* display: grid; */
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    width: 100%;
+    position: relative;
+    margin: 0px auto;
+}
+
+/* logout button */
+#header #logout {
+    height: 40px;
+    width: 40px;
+    font-size: 17px;
+    background: linear-gradient(83.11deg, #ff0800 0%, #a32c1c 100%);
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#header #logout a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#header #logout:hover {
+    background: linear-gradient(83.11deg, #ff0800 0%, #a32c1c 100%);
+}
+
+/* edit button */
+#header #edit {
+    height: 40px;
+    width: 40px;
+    font-size: 17px;
+    background: linear-gradient(83.11deg, #ffc400 0%, #b49220 100%);
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#header #edit a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#header #edit:hover {
+    background: linear-gradient(83.11deg, #ffc400 0%, #ffcf33 100%);
+}
+
+
+
+/* edit button */
+#header #recommended {
+    height: 40px;
+    width: 40px;
+    font-size: 17px;
+    background: linear-gradient(83.11deg, #0b9dff 0%, #1661a7 100%);
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#header #recommended a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#header #recommended:hover {
+    background: linear-gradient(83.11deg, #178ddb 0%, #0f9bc5 100%);
+}
+
+/* search box */
+#searchBox {
+    height: 60px;
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    top: 270px;
+}
+
+#searchBox input[type="text"] {
+    height: 100%;
+    width: 98%;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 7px;
+    color: #000;
+    font-size: 18px;
+}
+
+
+
+#searchBox input[type="text"]::placeholder {
+    color: #000;
+}
+
+/* search button */
+#searchBox .searchButton {
+    height: 60px;
+    width: 60px;
+    background: linear-gradient(83.11deg, #00ff28 0%, #4fd1c5 100%);
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.searchButton:hover {
+    background: linear-gradient(83.11deg, #00ff28 0%, #4fd1c5 100%);
+}
+
+/* online users list css */
+#onlineUsers {
+    height: 420px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 330px;
+    overflow-y: hidden;
+}
+#onlineUsers #errors{
+    font-size: 19px;
+    padding: 10px 35px;
+}
+
+#onlineUsers .profile {
+    height: 90px;
+    width: 90%;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4));
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    left: 5%;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px #00000030;
+    cursor: pointer;
+}
+
+/* to displat multiple users */
+#onlineUsers .profile:first-child {
+    top: 0px;
+}
+
+/* users profile image */
+#onlineUsers .profile .image {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #33e660;
+    position: absolute;
+    left: 25px;
+    bottom: 8px;
+}
+
+#onlineUsers .profile .image img {
+    width: 100%;
+    height: 100%;
+}
+
+/* name & last message */
+#onlineUsers .profile .name,
+.lastMessage {
+    height: 40px;
+    width: 60%;
+    position: absolute;
+    left: 110px;
+    line-height: 40px;
+    overflow: hidden;
+}
+
+/* name */
+#onlineUsers .profile .name {
+    color: #33e657;
+    top: 10px;
+    font-size: 19px;
+}
+
+/* last message */
+#onlineUsers .profile .lastMessage {
+    bottom: 10px;
+    color: #000;
+}
+
+/* status */
+#onlineUsers .profile .status {
+    border-radius: 10px;
+    position: absolute;
+    right: 40px;
+}
+#onlineUsers .profile .followicon {
+    border-radius: 10px;
+    position: absolute;
+    right: 50px;
+}
+
+
+#onlineUsers .profile .online {
+    color: #17df32
+}
+
+.profile-image {
+    position: absolute;
+    right: 30px;
+    height: 40px;
+    width: 40px;
+}
+
+#onlineUsers .profile .offline {
+    color: #252525;
+}
+
+/* customizing scroll bar */
+#onlineUsers::-webkit-scrollbar {
+    background: transparent;
+}
+
+#onlineUsers::-webkit-scrollbar-track {
+    width: 40px;
+}
+
+#onlineUsers::-webkit-scrollbar-thumb {
+    height: 40px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+}
+
+.buttons {
+        height: 50px;
+        width: 50px;
+        display: inline-flex;
+        position: relative;
+    gap: 15px;
+        left: 370px;
+    
+        a {
+            text-decoration: none;
+
+            img {
+                height: 50px;
+                width: 50px;
+            }
+        }
+    }
+
+@media only screen and (max-width: 800px) {
+
+    .userProfile {
+        grid-template-rows: none;
+    }
+
+
+    .buttons {
+        height: 50px;
+        width: 50px;
+        display: inline-flex;
+        position: relative;
+        gap: 15px;
+        left: -30px;
+        a {
+            text-decoration: none;
+        img {
+                height: 50px;
+        width: 50px;
+            }
+        }
+    ;
+        top: 120px;
+    }
+
+    #details {
+        margin-top: 15px;
+    }
+
+    #searchBox input[type="text"] {
+        width: 92%;
+    }
+
+    .button-group {
+      grid-template-columns: 1fr;
+      margin-top: 90px;
+    }
+
+    #container #header {
+        height: 280px;
+    }
+
+    #searchBox {
+        top: 301px;
+    }
+
+    #header #details {
+        margin-top: 30px;
+        left: 120px;
+    }
+    
+    #header .fullProfile{
+        margin-top: 120px;
+    }
+
+    #header #headerProfile {
+        height: 80px;
+        margin-top: 35px;
+        width: 80px;
+        left: 30px;
+    }
+    
+    #header #details #headerStatus {
+        font-weight: 300;
+        width: 200px;
+    }
+
+    #container {
+        height: 1080px;
+    }
+
+    #onlineUsers {
+        top: 365px;
+    }
+  }
